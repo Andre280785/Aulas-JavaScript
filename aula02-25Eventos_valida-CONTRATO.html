@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<title>Lógica de programação JavaScript</title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+    <h1>Lógica de programação JavaScript</h1>
+	<form action="#">
+	    <textarea id="msg" cols="50", rows="10" readonly>Contrato de serviços prestados      
+        </textarea><br>
+        <label>
+            <input type="checkbox" id="chk" checked> Li e aceito os termos deste contrato
+        </label><br>
+        
+        <input type="submit" value="Continuar" id="btn">
+	</form>
+    
+    <script type="text/javascript">
+        (function(){
+            'use strict';            
+            
+            var $btn = document.getElementById('btn');
+            var $chk = document.getElementById('chk');
+            $btn.disabled = toggleBtn();
+            
+            $chk.addEventListener('change', function(){
+                
+                //if(this.checked === true){
+                //   $btn.disabled = false;
+                //} else{
+                //    $btn.disabled = true;
+                //}
+                
+                $btn.disabled = toggleBtn();
+                
+            });
+            
+            function toggleBtn(){
+                return !$chk.checked;
+            }
+            
+        })();
+    </script>
+</body>
+</html>

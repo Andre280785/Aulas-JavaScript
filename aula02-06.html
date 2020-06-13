@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Documento sem título</title>
+    </head>
+    
+    <body>
+		<h1>Logica de programação com JavaScript</h1>
+        <h2>Mostrar Área de um retângulo:</h2>
+        <button onClick="mostrarAreaAlert()">Mostrar área - Alert</button>
+        <button onClick="mostrarAreaHtml()">Mostrar área - html</button>
+        <div id="output"></div>
+        
+        <script>
+			function mostrarAreaAlert(){
+				var largura = prompt("Informe a largura");
+				largura = parseFloat(largura);
+			
+				var altura = prompt("Informe a autura");
+				altura = parseFloat(altura);		
+				try{
+					var n = mostrarArea(largura, altura);
+					alert(n);
+				}catch (e){
+					alert(e);
+				}
+			}
+			
+			function mostrarAreaHtml(){
+				var largura = prompt("Informe a largura");
+				largura = parseFloat(largura);
+			
+				var altura = prompt("Informe a autura");
+				altura = parseFloat(altura);
+				try{
+					var n = mostrarArea(largura, altura);
+					document.querySelector("#output").innerHTML = n;	
+				}catch (e){
+					alert(e);
+				}
+			}
+			
+			function mostrarArea(l, a){
+				if(isNaN(l) || isNaN(a)){
+					throw ("O valor deve ser numérico.");
+				}
+				return l * a;
+			}			
+		</script>            
+    </body>
+</html>

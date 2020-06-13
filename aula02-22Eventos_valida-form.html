@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<title>Lógica de programação JavaScript</title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+    <div class="container">
+	    <h1>Lógica de programação JavaScript</h1>
+	    
+	    <form action="#">
+            <label for="txtUser">Usuário</label>
+	        <input type="text" id="txtUser" name="user"><br>
+	        <label for="txtPass">Senha</label>
+	        <input type="password" id="txtPass" name="pass"><br>
+	        <button type="submit" id="btn">Logar</button>
+	    </form>
+    </div>
+    
+    <script type="text/javascript">
+        (function(){
+            'use strict';
+            var $form = document.querySelector('form');
+            var $txtUser = document.getElementById('txtUser');
+            var $txtPass = document.getElementById('txtPass');
+            var $btn = document.getElementById('btn');
+            
+            $form.addEventListener('submit', function(e){
+                
+                if($txtUser.value === "" || $txtPass.value === ""){
+                    alert("Preencha todos os campos!");
+                    e.preventDefault();
+                }
+            })
+        })();
+    </script>
+</body>
+</html>

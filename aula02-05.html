@@ -1,0 +1,74 @@
+﻿<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+    	<title>Logica de programação</title>
+    </head>
+      
+    <body>
+    	<h1>Logica de programação com JavaScript</h1>
+        <button onClick="iniciarCalculo('+')">+</button>
+        <button onClick="iniciarCalculo('-')">-</button>
+        <button onClick="iniciarCalculo('*')">*</button>
+        <button onClick="iniciarCalculo('/')">/</button>
+        
+        <div id="output"></div>
+    
+		<script>		
+            var n2 = prompt("Digite um número");
+            n2 = parseFloat(n2);
+            
+            escreve(n2);
+            
+			function iniciarCalculo(simbolo){
+				var n1 = document.querySelector('#output').textContent;
+				n1 = parseFloat(n1);
+				
+				var n2 = prompt("Digite outro número");
+				n2 = parseFloat(n2);
+				
+				try{
+					var msg = calcular(simbolo, n1, n2);
+				}catch (e){
+					alert(e);
+					return;
+				}
+				
+				escreve(msg);
+			}
+			
+            function escreve(mensagem){
+                var output = document.querySelector('#output');
+                output.innerHTML = mensagem;
+            }
+            
+            function calcular(operacao, n1, n2){
+				
+				if (isNaN(n1) || isNaN(n2)){
+					throw ("Digite um número valido.");
+				}
+				
+				if(operacao !== '+' && operacao !== '-' && operacao !== '*' && operacao !== '/'){
+					throw("Escolha um operador valido.");
+				}
+				
+				var numeroCalculado = null;
+						
+				switch (operacao){
+					case '+': 						
+						numeroCalculado = n1 + n2;						
+						break;
+					case '-':
+						numeroCalculado = n1 - n2;
+						break;
+					case '*':
+						numeroCalculado = n1 * n2;
+						break;
+					case '/':
+						numeroCalculado = n1 / n2;						
+				}
+				return numeroCalculado;				
+            }
+		</script>
+    </body>
+</html>

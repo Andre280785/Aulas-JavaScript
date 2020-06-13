@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //funções literais
+        function minhaFuncao (a, b){
+            a = parseFloat(a);
+            b = parseFloat(b);
+            return a + b;
+        }
+        var n = minhaFuncao(10, 20);
+        console.log(n);
+
+        //funções anônimas
+        var teste = function ( str ){
+            console.log("Olá ", str);
+        };
+
+        teste("Bom dia");
+
+        //funções passadas como parametro
+
+        var teste2 = function(f){
+            f();
+        };
+
+        teste2(function(){
+            console.log('função passada por parametro');
+        });
+
+        // Funções auto Executaveis (Immediately-invoked function expression IIFE)
+        (function(){
+            'use script' // uma boa pratica para não sujar o scopo global.
+            var isValid = false;
+            console.log(isValid);
+
+            function somar(arr){
+                console.log(arguments);
+                var result = 0;
+                var x = 0;
+
+                while(arguments[x]){
+                    result += arguments[x];
+                    x++;
+                }
+                console.log('result: ', result);
+            }
+            somar(10, 20,30,10);
+        })();
+
+        
+    </script>
+</body>
+</html>
