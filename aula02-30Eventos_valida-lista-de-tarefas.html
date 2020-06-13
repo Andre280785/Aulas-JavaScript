@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<title>Lógica de programação JavaScript</title>
+	<meta charset="utf-8">
+	<style>
+        .done{
+            text-decoration: line-through;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lógica de programação JavaScript</h1>
+	
+    <input type="text" id="txtTask">
+    <br>
+    <button id="btn">Cadastrar tarefa</button>
+    
+    <ul>
+	    <li>estudar Javascript - DOM</li>
+	    <li>estudar eventos em Javascript</li>
+	    <li>jogar video-game</li>
+	</ul>
+    
+    <script type="text/javascript">
+        (function(){
+            'use strict';            
+            var $ul = document.querySelector('ul');
+            var $lis = $ul.querySelectorAll('li');
+            var $txtTask = document.querySelector('#txtTask');
+            var $btn = document.querySelector('#btn');
+            
+            $btn.addEventListener('click', addTask);
+            $txtTask.addEventListener('keyup', function(e){
+                //console.log(e.keyCode); para descobrir o codigo da tecla
+                if(e.keyCode === 13){
+                    addTask();
+                }                
+            });
+            
+            for(var i=0; i< $lis.length; i++){
+                addEvent($lis[i]);
+            }
+            
+            function toogleDone(){
+                this.classList.toggle('done');
+            }
+            
+            function addTask(){
+                
+                var li = document.createElement('li');
+                var text = document.createTextNode($txtTask.value);
+                
+                li.appendChild(text);
+                
+                $ul.appendChild(li);
+                
+                addEvent(li);
+                
+                $txtTask.value = '';
+                $txtTask.focus();
+            }
+            
+            function addEvent(li){
+                li.addEventListener('click', toogleDone);
+            }
+        })();
+    </script>
+</body>
+</html>
