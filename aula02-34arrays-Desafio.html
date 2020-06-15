@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<title>Lógica de programação JavaScript</title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+	<h1>Lógica de programação JavaScript</h1>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla voluptatem eveniet aliquid iste quibusdam unde repellat! Ipsam voluptas error, placeat vero tenetur accusamus numquam veniam nobis minima. Dignissimos, fuga nam.</p>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quasi sunt hic beatae ipsam nobis tempore quisquam repellat, minima aut! Aut, quae, doloremque. Voluptatem consectetur sunt ex facilis reprehenderit voluptates.</p>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente expedita dicta non modi quo quibusdam dolorum exercitationem sint, dolore nemo pariatur magnam! Iusto voluptas iure neque voluptatem, natus molestiae hic.</p>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident ab voluptatibus, dolor a culpa quisquam illo non corporis! Beatae qui, eligendi deserunt soluta porro quidem atque ut. Exercitationem, reprehenderit enim.</p>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quasi, odit soluta accusamus maxime tenetur voluptates amet. Laboriosam illum natus, dolorem, nulla voluptate porro quod, animi voluptatibus iure, itaque beatae?</p>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quia, architecto facilis eveniet. Commodi nisi, molestiae dignissimos dolor modi architecto, asperiores quaerat ea ipsam est omnis fugit itaque debitis fugiat.</p>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa in maiores laborum iusto ad asperiores voluptatibus dignissimos dolores laboriosam, amet, consequuntur dicta nostrum at sint eum. Eligendi consequatur fugit molestiae.</p>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet tempore adipisci delectus ipsum minima animi incidunt natus. Facilis quam repellat, dolores, excepturi autem, incidunt, culpa a tempore quia laboriosam sint!</p>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus expedita porro sint labore, vitae dolorum quo ullam obcaecati quidem, natus impedit pariatur odit ipsam cumque perferendis qui? Molestias, minus magni.</p>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur distinctio dolore, animi, pariatur amet culpa eveniet, molestias expedita vel porro cumque quisquam ducimus voluptatum quo mollitia qui! Impedit, tempora, assumenda.</p>
+    
+    <script type="text/javascript">
+        var paragrafos = document.querySelectorAll('p');
+        
+        for(var i=0; i<paragrafos.length; i++){
+            paragrafos[i].innerHTML = formataParagrafos(paragrafos[i].innerHTML);            
+        }
+        
+        function formataParagrafos(texto){
+            var arr = texto.split(' ');
+            
+            if(arr.length > 10){
+                return arr.slice(0, 10).join(' ') + '...';
+            }
+            
+            return texto;
+        }
+    </script>
+	
+</body>
+
+</html>
